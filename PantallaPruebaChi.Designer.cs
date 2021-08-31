@@ -107,6 +107,7 @@ namespace VariablesAleatorias
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.grdResultados);
             this.Name = "PantallaPruebaChi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PantallaPruebaChi";
             this.Load += new System.EventHandler(this.PantallaPruebaChi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdResultados)).EndInit();
