@@ -262,26 +262,7 @@ namespace VariablesAleatorias
 
         private void btnGraficar_Click(object sender, EventArgs e)
         {
-            if (rbUniforme.Checked)
-            {
-                gestorUniforme.graficar();
-                return;
-            }
-            if (rbNormal.Checked)
-            {
-                gestorNormalBoxMuller.graficar();
-                return;
-            }
-            if (rbExponencialNegativa.Checked)
-            {
-                gestorExponencial.graficar();
-                return;
-            }
-            if (rbPoisson.Checked)
-            {
-                gestorPoisson.graficar();
-                return;
-            }
+
         }
 
         private void rbUniforme_CheckedChanged(object sender, EventArgs e)

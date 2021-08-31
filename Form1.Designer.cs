@@ -63,7 +63,6 @@ namespace VariablesAleatorias
             this.grdAleatorios = new System.Windows.Forms.DataGridView();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.gbGrafico = new System.Windows.Forms.GroupBox();
-            this.btnGraficar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.gbDistribucion.SuspendLayout();
             this.gbUniforme.SuspendLayout();
@@ -394,7 +393,7 @@ namespace VariablesAleatorias
             this.btnGenerar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGenerar.Location = new System.Drawing.Point(234, 250);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(254, 31);
+            this.btnGenerar.Size = new System.Drawing.Size(254, 65);
             this.btnGenerar.TabIndex = 8;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = true;
@@ -410,23 +409,12 @@ namespace VariablesAleatorias
             this.gbGrafico.TabStop = false;
             this.gbGrafico.Text = "Gráfico";
             // 
-            // btnGraficar
-            // 
-            this.btnGraficar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGraficar.Location = new System.Drawing.Point(234, 296);
-            this.btnGraficar.Name = "btnGraficar";
-            this.btnGraficar.Size = new System.Drawing.Size(254, 31);
-            this.btnGraficar.TabIndex = 10;
-            this.btnGraficar.Text = "Graficar";
-            this.btnGraficar.UseVisualStyleBackColor = true;
-            this.btnGraficar.Click += new System.EventHandler(this.btnGraficar_Click);
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(234, 349);
+            this.button1.Location = new System.Drawing.Point(234, 331);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 31);
+            this.button1.Size = new System.Drawing.Size(254, 63);
             this.button1.TabIndex = 11;
             this.button1.Text = "Realizar prueba CHI";
             this.button1.UseVisualStyleBackColor = true;
@@ -438,7 +426,6 @@ namespace VariablesAleatorias
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 655);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnGraficar);
             this.Controls.Add(this.gbGrafico);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.grdAleatorios);
@@ -507,7 +494,6 @@ namespace VariablesAleatorias
         private System.Windows.Forms.DataGridView grdAleatorios;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.GroupBox gbGrafico;
-        private System.Windows.Forms.Button btnGraficar;
         private System.Windows.Forms.Button button1;
     }
 }
