@@ -103,19 +103,36 @@ namespace VariablesAleatorias
         {
             if (lambdaExponencial.Text.Equals("") && mediaExponencial.Text.Equals("")) { return; }
             gestorExponencial = new GestorExponencial(this);
-            double[] exponencial = calcularLambdaExponencial();
-            double lambda = exponencial[0];
-            double media = exponencial[1];
+            double media = calcularMedia();
+            double lambda = 1.0 / media;
+            if (media <= 0 || lambda <= 0) { return; }
+            mediaExponencial.Text = media.ToString();
+            lambdaExponencial.Text = lambda.ToString();
             gestorExponencial.generarExponencial(lambda, media, cantidadValores, cantidadIntervalos);
+        }
+
+        private double calcularMedia()
+        {
+            if (!mediaExponencial.Text.Equals("")) { return double.Parse(mediaExponencial.Text); }
+            return 1.0 / double.Parse(lambdaExponencial.Text);
         }
         private void generarPoisson()
         {
             if (lambdaPoisson.Text.Equals("") && mediaPoisson.Text.Equals("")) { return; }
-            gestorPoisson = new GestorPoisson(this);
-            double[] parametros = calcularLambdaPoisson();
-            double lambda = parametros[0];
-            double media = parametros[1];
-            gestorPoisson.generarPoisson(lambda, media, cantidadValores);
+
+            if (int.Parse(lambdaPoisson.Text) <= 0)
+            {
+                MessageBox.Show("Datos inválidos");
+            }
+            else
+            {
+                gestorPoisson = new GestorPoisson(this);
+                double[] parametros = calcularLambdaPoisson();
+                double lambda = parametros[0];
+                double media = parametros[1];
+                gestorPoisson.generarPoisson(lambda, media, cantidadValores);
+            }
+            
         }
 
         private double[] calcularLambdaExponencial()

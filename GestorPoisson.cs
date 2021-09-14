@@ -61,7 +61,7 @@ namespace VariablesAleatorias
 
         public void probar()
         {
-            double[] temp = valoresDiscretos.Select(l => (double)l - 0.00001).ToArray();
+            //double[] temp = valoresDiscretos.Select(l => (double)l - 0.00001).ToArray();
             IProbador probador;
             probador = new ProbadorPoisson(truncador, tablaAleatorios, lambda, valoresDiscretos, frecuenciasObservadas);
 
