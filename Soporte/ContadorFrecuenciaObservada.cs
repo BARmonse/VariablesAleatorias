@@ -77,10 +77,10 @@ namespace VariablesAleatorias.Soporte
         // desde aqui hasta abajo deberia ser otra clase
         public void contarPoisson(int numero)
         {
-            if (!frecuenciasPoisson.ContainsKey(numero)) { frecuenciasPoisson.Add(numero, 0); }
+            if (!frecuenciasPoisson.ContainsKey(numero)) { frecuenciasPoisson.Add(numero, 0); } // Se fija en la hash table si existe el valor que pasamos como parámetro, si no existe lo agrega.
             int recuperado = frecuenciasPoisson[numero];
             recuperado += 1;
-            frecuenciasPoisson[numero] = recuperado;
+            frecuenciasPoisson[numero] = recuperado; // Suma uno en el contador uno.
         }
 
         public void ordenarSeriePoisson()
@@ -88,7 +88,6 @@ namespace VariablesAleatorias.Soporte
             valoresEnterosPoisson = obtenerValoresPoisson();
             frecuenciasEnterasPoisson = obtenerFrecuenciasPoisson();
             Sort(valoresEnterosPoisson, frecuenciasEnterasPoisson, 0, valoresEnterosPoisson.Length - 1);
-
         }
 
         public int[] getValoresPoisson()

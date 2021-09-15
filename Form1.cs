@@ -116,6 +116,8 @@ namespace VariablesAleatorias
             if (!mediaExponencial.Text.Equals("")) { return double.Parse(mediaExponencial.Text); }
             return 1.0 / double.Parse(lambdaExponencial.Text);
         }
+
+
         private void generarPoisson()
         {
             if (lambdaPoisson.Text.Equals("") && mediaPoisson.Text.Equals("")) { return; }
@@ -133,26 +135,6 @@ namespace VariablesAleatorias
                 gestorPoisson.generarPoisson(lambda, media, cantidadValores);
             }
             
-        }
-
-        private double[] calcularLambdaExponencial()
-        {
-            double lambda;
-            double media;
-
-
-            if (lambdaExponencial.Text.Equals(""))
-            {
-                media = double.Parse(mediaExponencial.Text);
-                lambda = 1 / media;
-                lambdaExponencial.Text = lambda.ToString();
-            }
-
-            lambda = double.Parse(lambdaExponencial.Text);
-            media = 1 / lambda;
-            mediaExponencial.Text = media.ToString();
-
-            return new double[] { lambda, media };
         }
 
         public void mostrarResultados(DataTable resultados)

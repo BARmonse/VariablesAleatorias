@@ -35,7 +35,7 @@ namespace VariablesAleatorias.Soporte.GeneradorAleatorios
         }
 
         // retorna un aleatorio
-        public double siguienteAleatorio()
+        public double siguienteAleatorio()//Método que genera las variables aleatorias.
         {
             p = 1;
             X = -1;
@@ -55,7 +55,7 @@ namespace VariablesAleatorias.Soporte.GeneradorAleatorios
             return this.generarSerie(cantidadAleatorios, null);
         }
 
-        public DataTable generarSerie(int cantidadAleatorios, ContadorFrecuenciaObservada frecuenciaObservada)
+        public DataTable generarSerie(int cantidadAleatorios, ContadorFrecuenciaObservada frecuenciaObservada) // Genera la serie de variables aleatorias
         {
             dataTable.Rows.Clear();
 

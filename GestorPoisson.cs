@@ -47,7 +47,7 @@ namespace VariablesAleatorias
             this.lambda = lambda;
 
             crearTabla();
-            ContadorFrecuenciaObservada contador = new ContadorFrecuenciaObservada();
+            ContadorFrecuenciaObservada contador = new ContadorFrecuenciaObservada();// Crea un objeto de la clase ContadorFrecuenciaObservada
             IGenerador generadorDistribucion = new GeneradorPoisson(tablaAleatorios, generadorLenguaje, truncador, lambda);
             generadorDistribucion.generarSerie(cantidadValores, contador);
 
