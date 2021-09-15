@@ -103,7 +103,7 @@ namespace VariablesAleatorias
         {
             if (lambdaExponencial.Text.Equals("") && mediaExponencial.Text.Equals("")) { return; }
             gestorExponencial = new GestorExponencial(this);
-            double media = calcularMedia();
+            double media = calcularMediaExponencial();
             double lambda = 1.0 / media;
             if (media <= 0 || lambda <= 0) { return; }
             mediaExponencial.Text = media.ToString();
@@ -111,30 +111,28 @@ namespace VariablesAleatorias
             gestorExponencial.generarExponencial(lambda, media, cantidadValores, cantidadIntervalos);
         }
 
-        private double calcularMedia()
+        private double calcularMediaExponencial()
         {
             if (!mediaExponencial.Text.Equals("")) { return double.Parse(mediaExponencial.Text); }
             return 1.0 / double.Parse(lambdaExponencial.Text);
         }
 
 
+        private double calcularMediaPoisson()
+        {
+            if (!mediaPoisson.Text.Equals("")) { return double.Parse(mediaPoisson.Text); }
+            return 1.0 / double.Parse(lambdaPoisson.Text);
+        }
         private void generarPoisson()
         {
             if (lambdaPoisson.Text.Equals("") && mediaPoisson.Text.Equals("")) { return; }
-
-            if (int.Parse(lambdaPoisson.Text) <= 0)
-            {
-                MessageBox.Show("Datos inválidos");
-            }
-            else
-            {
-                gestorPoisson = new GestorPoisson(this);
-                double[] parametros = calcularLambdaPoisson();
-                double lambda = parametros[0];
-                double media = parametros[1];
-                gestorPoisson.generarPoisson(lambda, media, cantidadValores);
-            }
-            
+            gestorPoisson = new GestorPoisson(this);
+            double media = calcularMediaPoisson();
+            double lambda = media;
+            if (media <= 0 || lambda <= 0) { return; }
+            mediaPoisson.Text = media.ToString();
+            lambdaPoisson.Text = lambda.ToString();
+            gestorPoisson.generarPoisson(lambda, media, cantidadValores);
         }
 
         public void mostrarResultados(DataTable resultados)
