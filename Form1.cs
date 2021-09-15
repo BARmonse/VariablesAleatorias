@@ -121,7 +121,7 @@ namespace VariablesAleatorias
         private double calcularMediaPoisson()
         {
             if (!mediaPoisson.Text.Equals("")) { return double.Parse(mediaPoisson.Text); }
-            return 1.0 / double.Parse(lambdaPoisson.Text);
+            return double.Parse(lambdaPoisson.Text);
         }
         private void generarPoisson()
         {
